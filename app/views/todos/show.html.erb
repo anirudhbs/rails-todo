@@ -8,4 +8,23 @@
   <%= @todo.text %>
 </p>
 
+<h2>Add comment</h2>
+<%= form_with(model: [@todo, @todo.comments.build],
+  local: true) do |form| %>
+  <p>
+    <%= form.label :commenter %>
+    <%= form.text_field :commenter %>
+  </p>
+
+  <p>
+    <%=form.label :body %>
+    <%=form.text_area :body %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'edit', edit_todo_path(@todo) %>
 <%= link_to 'Back', todos_path %>
