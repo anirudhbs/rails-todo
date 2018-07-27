@@ -1,0 +1,17 @@
+<h1>Listing articles</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @todos.each do |cur| %>
+    <tr>
+      <td><%= cur.title %></td>
+      <td><%= cur.text %></td>
+      <td><%= link_to 'Show', todo_path(cur) %></td>
+    </tr>
+  <% end %>
+</table>
