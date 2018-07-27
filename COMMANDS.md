@@ -8,3 +8,5 @@
   # Welcome - controller name
   # index - action
   ```
+* show routes: `bin/rails routes`
+* new todo controller: `bin/rails generate controller todos`
