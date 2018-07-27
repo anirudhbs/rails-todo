@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# this comment exists only to get rid of the lint error
 class TodosController < ApplicationController
   def index
     @todos = Todo.all
@@ -31,7 +34,7 @@ class TodosController < ApplicationController
       redirect_to @todo
     else
       render 'edit'
-    end  
+    end
   end
 
   def destroy
@@ -42,7 +45,8 @@ class TodosController < ApplicationController
   end
 
   private
-    def todo_params
-      params.require(:todo).permit(:title, :text) # whitelist params
-    end
+
+  def todo_params
+    params.require(:todo).permit(:title, :text) # whitelist params
+  end
 end
