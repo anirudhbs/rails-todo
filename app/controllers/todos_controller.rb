@@ -3,6 +3,8 @@ class TodosController < ApplicationController
   end
 
   def create
-    render plain: params[:todo].inspect
+    @todo = Todo.new(params[:todo])
+    @todo.save
+    redirect_to @todo
   end
 end
