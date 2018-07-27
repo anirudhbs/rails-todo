@@ -13,6 +13,9 @@
       <td><%= cur.text %></td>
       <td><%= link_to 'show', todo_path(cur) %></td>
       <td><%= link_to 'edit', edit_todo_path(cur) %></td>
+      <td><%= link_to 'delete', todo_path(cur),
+        method: :delete,
+        data: { confirm: 'are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
