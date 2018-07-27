@@ -11,6 +11,10 @@ class TodosController < ApplicationController
     @todo = Todo.new
   end
 
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
   def create
     @todo = Todo.new(todo_params)
     if @todo.save # if saving fails or not validated
@@ -18,6 +22,16 @@ class TodosController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def update
+    @todo = Todo.find(params[:id])
+
+    if @todo.update(todo_params)
+      redirect_to @todo
+    else
+      render 'edit'
+    end  
   end
 
   private
