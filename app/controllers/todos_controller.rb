@@ -2,6 +2,9 @@
 
 # this comment exists only to get rid of the lint error
 class TodosController < ApplicationController
+  http_basic_authenticate_with name: "anirudh", password: "2001",
+    except: [:index, :show]
+
   def index
     @todos = Todo.all
   end
