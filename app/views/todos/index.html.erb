@@ -1,5 +1,6 @@
 <h1>Todo list</h1>
  
+ <%= link_to 'new', new_todo_path(@todo) %>
 <table>
   <tr>
     <th>Title</th>
@@ -19,5 +20,3 @@
     </tr>
   <% end %>
 </table>
-
-<%= link_to 'new', new_todo_path(@todo) %>
