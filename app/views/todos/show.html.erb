@@ -8,6 +8,19 @@
   <%= @todo.text %>
 </p>
 
+<h2>Comments</h2>
+<% @todo.comments.each do |cur| %>
+  <p>
+    <strong>user:</strong>
+    <%= cur.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment</strong>
+    <%= cur.body %>
+  </p>
+<% end %>
+
 <h2>Add comment</h2>
 <%= form_with(model: [@todo, @todo.comments.build],
   local: true) do |form| %>
