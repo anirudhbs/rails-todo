@@ -11,3 +11,8 @@
 * show routes: `bin/rails routes`
 * new todo controller: `bin/rails generate controller todos`
 * new todo model: `bin/rails generate model Todo title:string text:text`
+* Create another model:
+  ```
+  bin/rails generate model Comment commenter:string body:text todo:references
+  # sets up active record association with todo model
+  ```
